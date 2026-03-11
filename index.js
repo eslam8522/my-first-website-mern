@@ -63,4 +63,8 @@ app.post("/api/passwordChange", async (req, res) => {
 
 // 4. DYNAMIC PORT (The Fix for "Unexposed Service")
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
+
+// Update this line specifically:
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server is running on port ${PORT}`);
+});
