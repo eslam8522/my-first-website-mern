@@ -43,7 +43,7 @@ function Profile() {
         }
        try{
         const userEmail= localStorage.getItem("userEmail");
-        const response= await axios.post("my-first-website-mern-production.up.railway.app/api/passwordChange",{userEmail, pass1})
+        const response= await axios.post("http://my-first-website-mern-production.up.railway.app/api/passwordChange",{userEmail, pass1})
         alert("Password has been changed successfully!");
         setPass1("");
         setPass2("");

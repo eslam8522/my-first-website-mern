@@ -19,7 +19,7 @@ function Login() {
     }
 
     try {
-      const response = await axios.post("my-first-website-mern-production.up.railway.app/api/login", { email, password });
+      const response = await axios.post("http://my-first-website-mern-production.up.railway.app/api/login", { email, password });
       
       // Check for 200 (Success) or 201 (Created)
       if (response.status === 200 || response.status === 201) {
