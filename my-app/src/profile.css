@@ -1,0 +1,105 @@
+/* Resetting defaults so padding doesn't break the layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 1. Outer Wrapper: Stacks Header on top of Main */
+.profile-container {
+    height: 100vh;           /* Full height of the screen */
+    display: flex;
+    flex-direction: column;  /* Vertical stack */
+    overflow: hidden;        /* Prevents double scrollbars */
+}
+
+/* 2. Top Header */
+.profile-header {
+    background-color: rgb(58, 58, 147);
+    height: 60px;           /* Fixed height */
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+    color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 10;            /* Keeps header above the content */
+}
+
+/* 3. The Main Content Wrapper (Row) */
+.main-container {
+    display: flex;          /* Sidebar and Content sit side-by-side */
+    flex: 1;                /* Fills all remaining vertical space */
+}
+
+/* 4. Sidebar: Fixed Width */
+.profile-sidebar {
+    width: 260px;           /* Fixed size so it doesn't shrink on small screens */
+    background-color: rgb(124, 73, 73);
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.profilebtn {
+    color: rgb(0, 0, 0);
+    font-size: 1.8rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+    cursor: pointer;
+    background: none;
+    font-weight: bold;
+}
+
+/* 5. Buttons: Full-width hit targets */
+.profile-sidebar button {
+    width: 80%; 
+    margin-top: 5px;
+    margin-left: 10px;          /* Makes the entire row clickable */
+    background: none;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    text-align: left;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.profile-sidebar button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding-left: 35px;     /* Smooth sliding effect */
+}
+
+/* Style for the currently active tab */
+.profile-sidebar button.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left: 5px solid #ffd700; /* Gold indicator line */
+}
+
+/* 6. Content Section: Scrollable */
+.profile-content {
+    flex: 1;                /* Fills the rest of the horizontal space */
+    background-color: rgb(102, 125, 125);
+    padding: 40px;
+    overflow-y: auto;       /* Only this section scrolls if content is long */
+}
+
+.content-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 8px;
+    color: #333;
+}   
+
+.f1{
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg,purple, rgb(66, 66, 136), purple);
+    padding: 50px;
+    min-width: 300px;
+    width: 500px;
+    gap: 10px;
+}

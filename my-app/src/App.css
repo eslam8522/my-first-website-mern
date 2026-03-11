@@ -1,0 +1,247 @@
+/* 1. Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- Layout Wrapper --- */
+/* Ensures the footer stays at the bottom of the screen */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
+
+/* 2. Login & Register Pages */
+.login-page, .page-Register {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg,purple, rgb(66, 66, 136), purple);
+  /* background: linear-gradient(135deg,rgb(33, 14, 21), rgb(66, 66, 136), rgb(84, 28, 84));  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  background-color: #293757;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* 3. Navbar */
+.nav-bar {
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #a4a764;
+  height: 90px; 
+  position: relative;
+  z-index: 10;
+}
+
+.nav-bar div {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-bar div a {
+  transition: 0.3s ease;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: white;
+}
+
+.nav-bar div a:hover {
+  /* Floats UP (-5px) toward the top of the screen */
+  transform: translateY(-5px); 
+  background-color: #c0cc67; 
+}
+
+.nav-bar img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+/* --- Middle Section Wrapper --- */
+.main-wrapper {
+  display: flex; /* Sidebar and Home sit side-by-side */
+  flex: 1;       /* Grows to fill available vertical space */
+}
+
+/* 4. Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #293757;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid rgba(0,0,0,0.1);
+}
+
+.sidebar h3 {
+  color: #a4a764;
+  margin-bottom: 25px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar li a {
+  display: block;
+  padding: 12px 15px;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: 0.3s ease;
+  font-family: sans-serif;
+}
+
+.sidebar li a:hover {
+  background-color: #3c61ad;
+  padding-left: 25px; /* Smooth slide-in effect */
+}
+
+/* 5. Home / Content Area */
+.home {
+  flex: 1; /* Takes the remaining width */
+  background-color: #3c61ad;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* 6. Footer */
+.foo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(77, 160, 77);
+  height: 50px; 
+  color: white;
+  width: 100%;
+}
+
+/* 7. Dropdown Menu System */
+.drop-container {
+  position: relative; /* Anchor for the absolute list */
+}
+
+.drop-trigger {
+  width: 180px;
+  height: 40px; /* Increased height for better visibility */
+  background-color: #85a4e0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+}
+
+.drop-list {
+  position: absolute;
+  top: 100%; 
+  right: 50%;   
+  /* Centers the list regardless of button width */
+  transform: translateX(50%); 
+  background-color: rgb(196, 158, 158);
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+  z-index: 10;
+  border-radius: 4px;
+  padding: 5px 0;
+  /* Clips the hover background so it stays inside */
+  overflow: hidden; 
+  padding: 8px;
+}
+
+.drop-list button {
+  width: 100%; /* Ensures background covers full width */
+  padding: 10px 15px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  color: #201111;
+  transition: 0.3s ease;
+}
+
+.drop-list button:hover {
+  background-color: #f0f0f0;
+  /* Moves text Right (+ve) without breaking the box */
+  padding-left: 20px; 
+}
+
+.logout-btn {
+  color: red !important;
+  font-weight: bold;
+}
+
+.logout-btn:hover {
+  background-color: #ffe6e6 !important; /* Soft red hover for logout */
+}
+
+.container-try {
+  position: relative;
+  display: inline-block; /* Keeps the container tight around the button */
+}
+
+.t1 {
+  border: none;
+  cursor: pointer;
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: rgb(75, 172, 172);
+  color: white; /* Make sure the trigger text is white */
+}
+
+.menu-ops {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 150px; 
+  display: flex;
+  flex-direction: column;
+  /* Removed gap to make the hover background seamless */
+  background-color: #625050;
+  z-index: 10;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  border-radius: 0 0 5px 5px;
+  overflow: hidden; /* Clips the hover background to the corners */
+}
+
+.menu-ops button {
+  width: 100%;       /* CRITICAL: Makes the hover effect fill the whole menu */
+  padding: 12px;
+  background: transparent; 
+  color: white;      /* Professional menus need contrast */
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.menu-ops button:hover {
+  padding-left: 20px; /* The "sliding" effect */
+  background-color: #f0f0f0;
+  color: #625050;    /* Flip the text color so it stays readable */
+}

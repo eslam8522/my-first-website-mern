@@ -1,0 +1,16 @@
+# Dependency folders (The heavy stuff)
+node_modules/
+**/node_modules/
+
+# Environment variables (Private passwords)
+.env
+.env.local
+
+# Build folders
+build/
+dist/
+out/
+
+# System files
+.DS_Store
+Thumbs.db
