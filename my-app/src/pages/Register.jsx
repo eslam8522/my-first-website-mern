@@ -25,7 +25,7 @@ function Register() {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/api/register", { name, email, password });
+      const response = await axios.post("my-first-website-mern-production.up.railway.app/api/register", { name, email, password });
       
       if (response.status === 201) {
         alert("Registration Successful!");
